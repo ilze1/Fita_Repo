@@ -45,8 +45,8 @@
 ## _Petclinic_ uzstādīšana
 6 p 
 
-- [ ] EC2 serveri pārvietojies uz home directory un izveidot Dockerfile.
-- [ ] Faila izvietot zemāk esošo kodu kuru papildināt ar:
+- [x] EC2 serveri pārvietojies uz home directory un izveidot Dockerfile.
+- [x] Faila izvietot zemāk esošo kodu kuru papildināt ar:
 - Image ar jdk 19 uz alpine 3.16 bazes.
 -  Petclinic versions 5.3.22**
 
@@ -65,12 +65,12 @@
   WORKDIR spring-framework-petclinic-${PETCLINIC_VERSION}
   ENTRYPOINT ["./mvnw", "jetty:run-war"]
   ```
-- [ ] Uzbūvēt Docker image – petclinic<gorup_name> ar tag 1.0.0;
-- [ ] Esošajā image registry novilkt spring-framework-petclinic no oficiala springcommunity hub.
-- [ ] Izmantojot tikko uzbūvēto image, un paņemto no repozitorija palaist Petclinic konteineru aplikāciju. 
+- [x] Uzbūvēt Docker image – petclinic<gorup_name> ar tag 1.0.0;
+- [x] Esošajā image registry novilkt spring-framework-petclinic no oficiala springcommunity hub.
+- [x] Izmantojot tikko uzbūvēto image, un paņemto no repozitorija palaist Petclinic konteineru aplikāciju. 
 Sekot līdz aplikācijas uzstādīšanas var ar `docker log` komandu:
-- [ ] Piekļūsti abam aplikācijam izmantojot instances publisko IP adresi 
-- [ ]  Ievieto ekrānuzņēmumu ar Petclinic un IP wiki zem sadaļas DONE.
+- [x] Piekļūsti abam aplikācijam izmantojot instances publisko IP adresi 
+- [x]  Ievieto ekrānuzņēmumu ar Petclinic un IP wiki zem sadaļas DONE.
 -	[ ] Automatizēt uzstādīšanas procesu ar GitHub actions.
 
 ## _image_ kopešana
