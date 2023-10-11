@@ -34,9 +34,9 @@
 ## _Docker_ uzstādīšana
 2 p
 
-- [ ] Pieslēgties **EC2** serverim.
-- [ ] Veikt  Docker uzdatēšanu, pēc  https://docs.docker.com/engine/install/ubuntu/ instrukcijas . Kuru metodi izmantot, izvēlamies paši. 
-- [ ] Pārliecinieties, ka Docker darbojas, izmantojot docker -v un docker ps.
+- [x] Pieslēgties **EC2** serverim.
+- [x] Veikt  Docker uzdatēšanu, pēc  https://docs.docker.com/engine/install/ubuntu/ instrukcijas . Kuru metodi izmantot, izvēlamies paši. 
+- [x] Pārliecinieties, ka Docker darbojas, izmantojot docker -v un docker ps.
 - [ ] Izveidot dokumentāciju.
 - [ ] Papildināt wiki.
 - [ ] Papildināt repozitoriju.
