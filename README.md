@@ -23,13 +23,13 @@
 - [x] Izmantojot **Terraform** izveidot **EC2** infrastruktūru, ar **ssh** piekļuvēm. Publisko un privāto tīklu.
 - [ ] Izveidot Terraform mapes struktūru (piem., "modules", "environments").
 - [ ] Izveidot dokumentāciju Terraform.
-- [ ] Izmantojot **GitHub Actions**  izveidot **S3**. 
-- [ ] Veikt S3 bucket politikas konfigurēšanu, lai nodrošinātu piekļuves kontroli.
+- [x] Izmantojot **GitHub Actions**  izveidot **S3**. 
+- [x] Veikt S3 bucket politikas konfigurēšanu, lai nodrošinātu piekļuves kontroli.
 - [ ] Testi.
 - [ ] Papildināt repozitoriju.
-- [ ] Papildināt wiki. 
+- [x] Papildināt wiki. 
 - [ ] Wiki izveidot DONE page. Aprakstīt padarīto.
-- [ ] Izmantojot **row.io** aprakstīt infrastruktūru. Bildes izvietot projekta Wiki. 
+- [x] Izmantojot **row.io** aprakstīt infrastruktūru. Bildes izvietot projekta Wiki. 
 
 ## _Docker_ uzstādīšana
 2 p

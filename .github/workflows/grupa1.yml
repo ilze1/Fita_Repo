@@ -1,0 +1,24 @@
+# The action creates structure from terraform file and deploys the pecipes application.
+name: grupa1
+# action trigger
+on:
+  workflow_dispatch:
+
+jobs:
+  # jobs name
+  create_s3:
+    # runner OS
+    runs-on: ubuntu-latest
+    
+    steps:
+ 
+      - name: Configure AWS
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-1 
+
+      - name: create_s3
+        run: 
+          aws s3api create-bucket --bucket fita-test-group1 --region us-west-1 --create-bucket-configuration LocationConstraint=us-west-1
