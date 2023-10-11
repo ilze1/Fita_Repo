@@ -93,7 +93,7 @@ resource "aws_instance" "public_instance" {
 
 
   tags = {
-    Name  = "recipes_host"
+    Name  = "Grupa1_pub_instance"
     Owner = "Grupa1"
   }
 }
@@ -107,7 +107,7 @@ resource "aws_instance" "private_instance" {
   user_data              = file("init.sh")
 
   tags = {
-    Name  = "recipes_sql_server"
+    Name  = "Grupa1_priv_instance"
     Owner = "Grupa1"
   }
 }
