@@ -20,7 +20,7 @@
 - Ubuntu OS
 - S3 bucket
 
-- [ ] Izmantojot **Terraform** izveidot **EC2** infrastruktūru, ar **ssh** piekļuvēm. Publisko un privāto tīklu.
+- [x] Izmantojot **Terraform** izveidot **EC2** infrastruktūru, ar **ssh** piekļuvēm. Publisko un privāto tīklu.
 - [ ] Izveidot Terraform mapes struktūru (piem., "modules", "environments").
 - [ ] Izveidot dokumentāciju Terraform.
 - [ ] Izmantojot **GitHub Actions**  izveidot **S3**. 
