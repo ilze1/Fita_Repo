@@ -21,4 +21,4 @@ jobs:
 
       - name: create_s3
         run: 
-          aws s3api create-bucket --bucket fita-test-group1 --region us-west-1
+          aws s3api create-bucket --bucket fita-test-group1 --region us-west-1 --create-bucket-configuration LocationConstraint=us-west-1
