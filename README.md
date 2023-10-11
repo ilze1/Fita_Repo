@@ -20,7 +20,7 @@
 - Ubuntu OS
 - S3 bucket
 
-- [ ] Izmantojot **Terraform** izveidot **EC2** infrastruktūru, ar **ssh** piekļuvēm. Publisko un privāto tīklu.
+- [x] Izmantojot **Terraform** izveidot **EC2** infrastruktūru, ar **ssh** piekļuvēm. Publisko un privāto tīklu.
 - [ ] Izveidot Terraform mapes struktūru (piem., "modules", "environments").
 - [ ] Izveidot dokumentāciju Terraform.
 - [ ] Izmantojot **GitHub Actions**  izveidot **S3**. 
@@ -34,9 +34,9 @@
 ## _Docker_ uzstādīšana
 2 p
 
-- [ ] Pieslēgties **EC2** serverim.
-- [ ] Veikt  Docker uzdatēšanu, pēc  https://docs.docker.com/engine/install/ubuntu/ instrukcijas . Kuru metodi izmantot, izvēlamies paši. 
-- [ ] Pārliecinieties, ka Docker darbojas, izmantojot docker -v un docker ps.
+- [x] Pieslēgties **EC2** serverim.
+- [x] Veikt  Docker uzdatēšanu, pēc  https://docs.docker.com/engine/install/ubuntu/ instrukcijas . Kuru metodi izmantot, izvēlamies paši. 
+- [x] Pārliecinieties, ka Docker darbojas, izmantojot docker -v un docker ps.
 - [ ] Izveidot dokumentāciju.
 - [ ] Papildināt wiki.
 - [ ] Papildināt repozitoriju.
