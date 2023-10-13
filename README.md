@@ -21,11 +21,11 @@
 - S3 bucket
 
 - [x] Izmantojot **Terraform** izveidot **EC2** infrastruktūru, ar **ssh** piekļuvēm. Publisko un privāto tīklu.
-- [ ] Izveidot Terraform mapes struktūru (piem., "modules", "environments").
-- [ ] Izveidot dokumentāciju Terraform.
+- [x] Izveidot Terraform mapes struktūru (piem., "modules", "environments").
+- [x] Izveidot dokumentāciju Terraform.
 - [x] Izmantojot **GitHub Actions**  izveidot **S3**. 
 - [x] Veikt S3 bucket politikas konfigurēšanu, lai nodrošinātu piekļuves kontroli.
-- [ ] Testi.
+- [x] Testi.
 - [x] Papildināt repozitoriju.
 - [x] Papildināt wiki. 
 - [x] Wiki izveidot DONE page. Aprakstīt padarīto.
@@ -39,8 +39,8 @@
 - [x] Pārliecinieties, ka Docker darbojas, izmantojot docker -v un docker ps.
 - [ ] Izveidot dokumentāciju.
 - [ ] Papildināt wiki.
-- [ ] Papildināt repozitoriju.
-- [ ] Automatizēt uzstādīšanu izmantojot **Github Actions**. Lai vDocker** varetu tikt uzstādīts uz jebkura cita Jūsu **EC2** servera. 
+- [x] Papildināt repozitoriju.
+- [x] Automatizēt uzstādīšanu izmantojot **Github Actions**. Lai vDocker** varetu tikt uzstādīts uz jebkura cita Jūsu **EC2** servera. 
 
 ## _Petclinic_ uzstādīšana
 6 p 
@@ -70,7 +70,7 @@
 - [x] Izmantojot tikko uzbūvēto image, un paņemto no repozitorija palaist Petclinic konteineru aplikāciju. 
 Sekot līdz aplikācijas uzstādīšanas var ar `docker log` komandu:
 - [x] Piekļūsti abam aplikācijam izmantojot instances publisko IP adresi 
-- [x]  Ievieto ekrānuzņēmumu ar Petclinic un IP wiki zem sadaļas DONE.
+- [x] Ievieto ekrānuzņēmumu ar Petclinic un IP wiki zem sadaļas DONE.
 -	[ ] Automatizēt uzstādīšanas procesu ar GitHub actions.
 
 ## _image_ kopešana
