@@ -1,0 +1,54 @@
+name: Python Flask GitHub action for docker registry 
+on:
+  workflow_dispatch:
+
+# Env variable
+env:
+  DOCKER_USER: grupa8180
+  DOCKER_TOKEN: ${{secrets.DOCKER_HUB_TOKEN}}
+  AWS_PRIVATE_KEY: ${{secrets.AWS_EC2_PRIVATE_KEY}}
+  REPO_NAME: vetclinicgrupa1
+  EC2_PUBLIC_IP: 50.18.36.144
+
+jobs:
+  build:  
+    runs-on: ubuntu-latest  
+    steps:
+    - uses: actions/checkout@v4 
+    - name: docker login
+      run: | 
+        docker login -u $DOCKER_USER -p $DOCKER_TOKEN
+    - name: Get build hash
+      run: echo BUILD_NUMBER=${GITHUB_SHA::7} >> $GITHUB_ENV
+    - name: Build the Docker image 
+      run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:$BUILD_NUMBER
+    - name: Docker Push
+      run: docker push $DOCKER_USER/$REPO_NAME:$BUILD_NUMBER
+      
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Get build hash
+      run: echo BUILD_NUMBER=${GITHUB_SHA::7} >> $GITHUB_ENV
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ env.DOCKER_USER }}
+        password: ${{ env.DOCKER_TOKEN }}
+    - name: Set permissions for private key
+      run: |
+        echo "${{ env.AWS_PRIVATE_KEY }}" > key.pem
+        chmod 600 key.pem
+    - name: Pull Docker image
+      run: |
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${EC2_PUBLIC_IP} "sudo docker pull ${DOCKER_USER}/${REPO_NAME}:${BUILD_NUMBER}"
+    - name: Stop running container
+      run: |
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${EC2_PUBLIC_IP} 'docker stop flaskapp || true'
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${EC2_PUBLIC_IP} 'docker rm flaskapp || true'
+    - name: Run new container
+      run: |
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@50.18.236.167 "docker run -d --name flaskapp -p 8080:8080 ${DOCKER_USER}/${REPO_NAME}:${BUILD_NUMBER}"
