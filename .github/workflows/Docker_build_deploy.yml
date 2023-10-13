@@ -9,7 +9,7 @@ env:
   AWS_PRIVATE_KEY: ${{secrets.AWS_EC2_PRIVATE_KEY}}
   REPO_NAME: vetclinicgrupa1
   EC2_PUBLIC_IP: 50.18.36.144
-  S3_BUCKET_IMAGE = grupa8180/petclinic:5.3.22
+  S3_BUCKET_IMAGE: "grupa8180/petclinic:5.3.22"
 
 jobs:
   build:  
