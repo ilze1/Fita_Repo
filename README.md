@@ -37,8 +37,8 @@
 - [x] Pieslēgties **EC2** serverim.
 - [x] Veikt  Docker uzdatēšanu, pēc  https://docs.docker.com/engine/install/ubuntu/ instrukcijas . Kuru metodi izmantot, izvēlamies paši. 
 - [x] Pārliecinieties, ka Docker darbojas, izmantojot docker -v un docker ps.
-- [ ] Izveidot dokumentāciju.
-- [ ] Papildināt wiki.
+- [x] Izveidot dokumentāciju.
+- [x] Papildināt wiki.
 - [x] Papildināt repozitoriju.
 - [x] Automatizēt uzstādīšanu izmantojot **Github Actions**. Lai vDocker** varetu tikt uzstādīts uz jebkura cita Jūsu **EC2** servera. 
 
