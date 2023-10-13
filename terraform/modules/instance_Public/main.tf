@@ -12,8 +12,7 @@ resource "aws_instance" "public_instance" {
   user_data                   = file("init.sh")
 
 
-  tags = {
-    Name  = "Grupa1_pub_instance"
-    Owner = "Grupa1"
-  }
+  tags = merge(var.tags, {
+    Name = "Private instance EC2"
+  })
 }
