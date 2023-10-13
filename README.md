@@ -76,8 +76,8 @@ Sekot līdz aplikācijas uzstādīšanas var ar `docker log` komandu:
 ## _image_ kopešana
 2 p
 
-- [ ] Pirms nosūtīšanas uz DockerHub, pārliecinieties, ka image ir pareizi marķēts un darbojas, izmantojot docker run.
-- [ ] https://hub.docker.com/ konta izveidot jaunu repozitoriju petclinic<gorup_name>  
+- [x] Pirms nosūtīšanas uz DockerHub, pārliecinieties, ka image ir pareizi marķēts un darbojas, izmantojot docker run.
+- [x] https://hub.docker.com/ konta izveidot jaunu repozitoriju petclinic<gorup_name>  
 - [ ] Savā EC2 instancē pārsaukt petclinic<gorup_name>:1.0.0 Docker image uz <groupname>/petclinic:5.3.22.
 - [ ] Nosutit Docker image uz publisko DockerHub
   ```sh
