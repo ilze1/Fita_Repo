@@ -51,4 +51,4 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${EC2_PUBLIC_IP} 'docker rm vetclinicSELFMADE || true'
     - name: Run new container
       run: |
-        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@50.18.236.167 "docker run -d --name vetclinicSELFMADE -p 8080:8080 ${DOCKER_USER}/${REPO_NAME}:${BUILD_NUMBER}"
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${EC2_PUBLIC_IP} "docker run -d --name vetclinicSELFMADE -p 8080:8080 ${DOCKER_USER}/${REPO_NAME}:${BUILD_NUMBER}"
