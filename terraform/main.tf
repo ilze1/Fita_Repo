@@ -7,7 +7,7 @@ terraform {
   }
     backend "s3" {
     # Replace this with your bucket name!
-    bucket         = "maris-test-s3-bucket"
+    bucket         = "grupa1-dev-bucket-s3"
     key            = "tfstate/terraform.tfstate"
     region         = "us-west-1"
   }
