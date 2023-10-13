@@ -19,7 +19,7 @@ provider "aws" {
 
 module "vpc" {
   source      = "./modules/vpc"
-  vpc_id = vpc-0f488eb699cfd3961
+  vpc_id = "vpc-0f488eb699cfd3961"
 }
 
 module "EC2_Private" {
