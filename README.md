@@ -26,9 +26,9 @@
 - [x] Izmantojot **GitHub Actions**  izveidot **S3**. 
 - [x] Veikt S3 bucket politikas konfigurēšanu, lai nodrošinātu piekļuves kontroli.
 - [ ] Testi.
-- [ ] Papildināt repozitoriju.
+- [x] Papildināt repozitoriju.
 - [x] Papildināt wiki. 
-- [ ] Wiki izveidot DONE page. Aprakstīt padarīto.
+- [x] Wiki izveidot DONE page. Aprakstīt padarīto.
 - [x] Izmantojot **row.io** aprakstīt infrastruktūru. Bildes izvietot projekta Wiki. 
 
 ## _Docker_ uzstādīšana
