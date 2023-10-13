@@ -13,6 +13,6 @@ resource "aws_instance" "public_instance" {
 
 
   tags = merge(var.tags, {
-    Name = "Private instance EC2"
+    Name = "Public instance EC2"
   })
 }
