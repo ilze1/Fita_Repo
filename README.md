@@ -1,4 +1,4 @@
-# Fita_Repo
+# Fita_Repo done tasks
 # Organizatoriskie uzdevumi
 ## Github projekta izveidošanā
 1 p 
