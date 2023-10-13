@@ -78,21 +78,21 @@ Sekot līdz aplikācijas uzstādīšanas var ar `docker log` komandu:
 
 - [x] Pirms nosūtīšanas uz DockerHub, pārliecinieties, ka image ir pareizi marķēts un darbojas, izmantojot docker run.
 - [x] https://hub.docker.com/ konta izveidot jaunu repozitoriju petclinic<gorup_name>  
-- [ ] Savā EC2 instancē pārsaukt petclinic<gorup_name>:1.0.0 Docker image uz <groupname>/petclinic:5.3.22.
-- [ ] Nosutit Docker image uz publisko DockerHub
+- [x] Savā EC2 instancē pārsaukt petclinic<gorup_name>:1.0.0 Docker image uz <groupname>/petclinic:5.3.22.
+- [x] Nosutit Docker image uz publisko DockerHub
   ```sh
   sudo docker login -u <DockerHubLietotajvards>/
   sudo docker push <DockerHubLietotajvards>/petclinic:5.3.0
   ```
-- [ ] Ievieto ekrānuzņēmumu ar https://hub.docker.com/ wiki DONE lapa.
+- [x] Ievieto ekrānuzņēmumu ar https://hub.docker.com/ wiki DONE lapa.
 
 
 ## _image_ kopēšanā S3
 6 p* 
-- [ ] Veikt image kopēšanu S3 bucket.   
+- [x] Veikt image kopēšanu S3 bucket.   
 
 
 ## _Petclinic_ uzstādīšana izmantojot pipelines
 10 p* 
-- [ ] Build Github runer puse. Pie izmaiņas kādā no koda branch.
-- [ ] Image push uz github vai S3repo pēc veiksmīgā build.
+- [x] Build Github runer puse. Pie izmaiņas kādā no koda branch.
+- [x] Image push uz github vai S3repo pēc veiksmīgā build.
