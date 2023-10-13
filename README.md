@@ -71,7 +71,7 @@
 Sekot līdz aplikācijas uzstādīšanas var ar `docker log` komandu:
 - [x] Piekļūsti abam aplikācijam izmantojot instances publisko IP adresi 
 - [x] Ievieto ekrānuzņēmumu ar Petclinic un IP wiki zem sadaļas DONE.
--	[ ] Automatizēt uzstādīšanas procesu ar GitHub actions.
+-	[x] Automatizēt uzstādīšanas procesu ar GitHub actions.
 
 ## _image_ kopešana
 2 p
