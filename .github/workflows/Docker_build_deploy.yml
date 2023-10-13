@@ -28,11 +28,11 @@ jobs:
     - name: make tar form image
       run: docker save $DOCKER_USER/$REPO_NAME:$BUILD_NUMBER | gzip > petclinic:5.3.22.tar
     - name: Set up AWS CLI         
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-1  # Change this to your desired region
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-1  # Change this to your desired region
     - name: Send Image to S3 bucket
       run: aws s3 cp petclinic:5.3.22.tar s3://grupa1-dev-bucket-s3/images/
       
