@@ -1,6 +1,8 @@
 name: Vetclinic GitHub action for docker registry 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
 
 # Env variable
 env:
