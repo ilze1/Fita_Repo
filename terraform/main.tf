@@ -1,122 +1,35 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+    backend "s3" {
+    # Replace this with your bucket name!
+    bucket         = "maris-test-s3-bucket"
+    key            = "tfstate/terraform.tfstate"
+    region         = "us-west-1"
+  }
+}
+
 provider "aws" {
   region = "us-west-1"
 }
 
-resource "aws_subnet" "public_sub" {
-  vpc_id     = "vpc-0f488eb699cfd3961"
-  cidr_block = "172.31.150.0/24"
-
-  tags = {
-    Name  = "Public"
-    Owner = "Gruppa1"
-  }
+module "vpc" {
+  source      = "./modules/vpc"
+  vpc_id = vpc-0f488eb699cfd3961
 }
 
-resource "aws_subnet" "private_sub" {
-  vpc_id     = "vpc-0f488eb699cfd3961"
-  cidr_block = "172.31.100.0/24"
-
-  tags = {
-    Name  = "Private"
-    Owner = "Gruppa1"
-  }
+module "EC2_Private" {
+  source      = "./modules/instance_Private"
+  subnet_id = module.vpc.private_sub_id
+  private_sec_group = module.vpc.private_sec_group_id
 }
 
-resource "aws_security_group" "public_sec_group" {
-  name = "public_sec_group"
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 8081
-    to_port     = 8081
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name  = "Group_1_sec_pub"
-    Owner = "Grupa1"
-  }
+module "EC2_Public" {
+  source      = "./modules/instance_Public"
+  subnet_id = module.vpc.public_sub_id
+  public_sec_group = module.vpc.public_sec_group_id
 }
-
-resource "aws_security_group" "private_sec_group" {
-  name = "private_sec_group"
-  ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name  = "Group_1_sec_private"
-    Owner = "Grupa1"
-  }
-}
-
-
-
-resource "aws_instance" "public_instance" {
-  ami                         = "ami-0f8e81a3da6e2510a"
-  instance_type               = "t2.large"
-  vpc_security_group_ids      = [aws_security_group.public_sec_group.id]
-  subnet_id                   = aws_subnet.public_sub.id
-  key_name                    = "Fita_test_group1"
-  associate_public_ip_address = true
-  user_data                   = file("init.sh")
-
-
-  tags = {
-    Name  = "Grupa1_pub_instance"
-    Owner = "Grupa1"
-  }
-}
-
-resource "aws_instance" "private_instance" {
-  ami                    = "ami-0f8e81a3da6e2510a"
-  instance_type          = "t2.large"
-  vpc_security_group_ids = [aws_security_group.private_sec_group.id]
-  subnet_id              = aws_subnet.private_sub.id
-  key_name               = "Fita_test_group1"
-  user_data              = file("init.sh")
-
-  tags = {
-    Name  = "Grupa1_priv_instance"
-    Owner = "Grupa1"
-  }
-}
-
-
