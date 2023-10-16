@@ -1,0 +1,23 @@
+name: Create S3 bucket
+
+on:
+  workflow_dispatch:
+    inputs:
+      S3BucketName:
+        description: 'S3 bucket name'
+        required: true
+
+jobs:
+  create_s3:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-1  # Change this to your desired region
+
+      - name: Create dynamodb table
+        run: aws dynamodb create-table --table-name terraform-up-and-running-locks --attribute-definitions AttributeName=LockID,AttributeType=S --sse-specification Enabled=true,SSEType=KMS,KMSMasterKeyId=abcd1234-abcd-1234-a123-ab1234a1b234 --tags Key=Owner,Value=Grupa1
