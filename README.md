@@ -17,6 +17,7 @@
 - [x] Uztaisīja development branch un pull request (Gaļina)
 - [x] Kopā uzlikām secure main brach
 - [x] Izveidot Dynamodb tabulu izmantojot GitHub Actions (Ainārs)
+- [x] Pievieno DynamoDB lock Terraform backend (Ainārs) 
 
 ## _Infrastrukturas_ izveidošana
 4 p
