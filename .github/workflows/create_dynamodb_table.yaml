@@ -1,14 +1,10 @@
-name: Create S3 bucket
+name: Create dynamodb table
 
 on:
   workflow_dispatch:
-    inputs:
-      S3BucketName:
-        description: 'S3 bucket name'
-        required: true
 
 jobs:
-  create_s3:
+  create_dynamodb:
     runs-on: ubuntu-latest
 
     steps:
