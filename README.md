@@ -13,7 +13,9 @@
 
 # Projekta uzdevumi:
 ### Papilduzd
-- [x] Pievienota apakšmape
+- [x] Pievienota apakšmape, kurā iekopēts petclinit src (Irina)
+- [x] Uztaisīja development branch un pull request
+- [x] Kopā uzlikām secure main brach
 
 ## _Infrastrukturas_ izveidošana
 4 p 
