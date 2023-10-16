@@ -12,6 +12,9 @@
 
 
 # Projekta uzdevumi:
+### Papilduzd
+- [x] Pievienota apakšmape
+
 ## _Infrastrukturas_ izveidošana
 4 p 
 
