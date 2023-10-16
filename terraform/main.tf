@@ -10,6 +10,8 @@ terraform {
     bucket         = "grupa1-dev-bucket-s3"
     key            = "tfstate/terraform.tfstate"
     region         = "us-west-1"
+    dynamodb_table = "terraform-up-and-running-locks"
+    encrypt        = true
   }
 }
 
